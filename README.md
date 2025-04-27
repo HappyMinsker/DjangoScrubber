@@ -1,18 +1,18 @@
-# Django Scrubber
+# Django Project Scrubber
 
-A tool to analyze Django projects for unused components, helping you keep your codebase clean and maintainable.
+A powerful tool to analyze Django projects for unused components, helping you keep your codebase clean and maintainable.
 
 ## Features
 
-- Identifies unused URLs
-- Finds unused methods
-- Detects duplicate method implementations
-- Identifies unused templates
+- Identifies potentially unused URLs
+- Finds unused methods (coming soon)
+- Detects duplicate method implementations (coming soon)
+- Identifies unused templates (coming soon)
 
 ## Installation
 
 ```bash
-pip install django-scrubber
+pip install django-project-scrubber
 ```
 
 ## Usage
@@ -20,43 +20,54 @@ pip install django-scrubber
 To analyze a Django project, run:
 
 ```bash
-django-scrubber /path/to/your/django/project
+django_scrubber /path/to/your/django/project
 ```
 
 The tool will analyze your project and display a summary of findings, including:
-- Unused URLs
-- Unused methods
-- Duplicate method implementations
-- Unused templates
+- Potentially unused URLs (excluding admin and auth URLs)
+- Unused methods (coming in future versions)
+- Duplicate method implementations (coming in future versions)
+- Unused templates (coming in future versions)
 
 ## Example Output
 
 ```
 Django Project Analysis Summary
 ==============================
-Unused URLs:
+
+Potentially Unused URLs:
 - /api/v1/old-endpoint/
-- /admin/legacy/
+- /legacy/dashboard/
+- /unused-feature/
 
-Unused Methods:
-- views.old_view
-- utils.deprecated_function
-
-Duplicate Methods:
-Similar implementations found in:
-- views.py:process_data
-- utils.py:handle_data
-
-Unused Templates:
-- templates/old_design/index.html
-- templates/legacy/header.html
+Note: This is a static analysis and may have false positives.
+Please verify these results before making any changes.
 ```
+
+## How It Works
+
+The Django Project Scrubber analyzes your Django project by:
+1. Scanning all URL patterns in your project
+2. Filtering out common false positives (admin, auth, etc.)
+3. Providing a clear summary of potentially unused components
 
 ## Requirements
 
 - Python 3.8 or higher
 - Django 3.0 or higher
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## License
 
-MIT License 
+MIT License
+
+## Author
+
+Your Name - [GitHub](https://github.com/yourusername)
+
+## Project Status
+
+This is the initial release (v0.1.0) with URL analysis functionality. More features are planned for future releases. 
