@@ -1,0 +1,68 @@
+Step 2: Build the Package
+Once your package structure is ready, you need to build it into distributable formats.
+
+Install setuptools and wheel :
+Ensure you have the necessary tools installed:
+bash
+
+
+1
+pip install setuptools wheel
+Build the Package :
+Run the following command in the root directory:
+bash
+
+
+1
+python setup.py sdist bdist_wheel
+This will generate two files in the dist/ directory:
+A source distribution (.tar.gz)
+A built distribution (.whl)
+Step 3: Upload the Package to PyPI
+To publish your package, you need to upload it to PyPI.
+
+Create a PyPI Account :
+Go to PyPI and create an account if you don't already have one.
+Install twine :
+Install twine, a tool for uploading packages:
+bash
+
+
+1
+pip install twine
+Upload the Package :
+Use twine to upload your package to PyPI:
+bash
+
+
+1
+twine upload dist/*
+You will be prompted to enter your PyPI username and password.
+Step 4: Verify the Package
+After uploading, verify that your package is available on PyPI.
+
+Visit the PyPI website and search for your package name.
+Install your package locally to test it:
+bash
+
+
+1
+pip install mypackage
+Test the functionality:
+python
+
+
+1
+2
+from mypackage import greet
+print(greet("World"))
+Step 5: Update the Package (Optional)
+If you make changes to your package, you can update it by incrementing the version number in setup.py and repeating the build and upload steps.
+
+Summary
+Organize your project with the required files (setup.py, README.md, LICENSE, etc.).
+Build the package using setuptools and wheel.
+Upload the package to PyPI using twine.
+Verify the package installation and functionality.
+Update the package as needed.
+By following these steps, you can successfully create and publish a Python package to PyPI. Let me know if you need further clarification or assistance!
